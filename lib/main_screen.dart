@@ -43,14 +43,14 @@ class _MainScreenState extends State<MainScreen> {
                 });
               },
               destinations: const [
-                NavigationDestination(icon: Icon(Icons.home_outlined),
-                    selectedIcon: Icon(Icons.home),
+                NavigationDestination(icon: Icon(Icons.home_outlined, color: Colors.white),
+                    selectedIcon: Icon(Icons.home, color: Colors.white),
                     label: 'Home'),
-                NavigationDestination(icon: Icon(Icons.work_history_outlined),
-                    selectedIcon: Icon(Icons.work_history),
+                NavigationDestination(icon: Icon(Icons.work_history_outlined, color: Colors.white),
+                    selectedIcon: Icon(Icons.work_history, color: Colors.white),
                     label: 'History'),
-                NavigationDestination(icon: Icon(Icons.settings_outlined),
-                    selectedIcon: Icon(Icons.settings),
+                NavigationDestination(icon: Icon(Icons.settings_outlined, color: Colors.white),
+                    selectedIcon: Icon(Icons.settings, color: Colors.white),
                     label: 'Settings')
               ],
           ),
