@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hour_calculator_flutter/HoursDB.dart';
 import 'package:hour_calculator_flutter/HoursModel.dart';
+import 'package:hour_calculator_flutter/ThemeColors.dart';
 
 //import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
@@ -49,15 +50,15 @@ class _HistoryTabState extends State<HistoryTab> {
                 backgroundColor: Colors.teal,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: const Text(
+                  title: Text(
                     "History",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: ThemeColors().getTitleColors()),
                   ),
                   background: Stack(
                     fit: StackFit.expand,
                     children: [
                       DecoratedBox(
-                          decoration: BoxDecoration(color: Colors.black))
+                          decoration: BoxDecoration(color: ThemeColors().getTitleBarColors()))
                     ],
                   ),
                 ),
@@ -72,22 +73,22 @@ class _HistoryTabState extends State<HistoryTab> {
                             context: context,
                             builder: (_) => AlertDialog(
                                   backgroundColor: const Color(0xffb2fdda),
-                                  title: Text("Title",
+                                  title: const Text("Info",
                                       style: TextStyle(color: Colors.black)),
-                                  content: Text("${total.toStringAsFixed(2)}",
-                                      style: TextStyle(color: Colors.black)),
+                                  content: Text("Total Hours: ${total.toStringAsFixed(2)}",
+                                      style: const TextStyle(color: Colors.black)),
                                   actions: [
                                     TextButton(
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
-                                        child: Text("OK",
+                                        child: const Text("OK",
                                             style:
                                                 TextStyle(color: Colors.teal)))
                                   ],
                                 ));
                       },
-                      icon: Icon(Icons.info, color: Colors.white)),
+                      icon: Icon(Icons.info)),
                   SizedBox(width: 20),
                 ],
               ),
@@ -105,8 +106,8 @@ class _HistoryTabState extends State<HistoryTab> {
                         background: Container(
                           alignment: AlignmentDirectional.centerEnd,
                           color: Colors.red,
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 20),
+                          child: const Padding(
+                            padding: EdgeInsets.only(right: 20),
                             child: Icon(
                               Icons.delete,
                               color: Colors.white,
@@ -155,7 +156,7 @@ class _HistoryTabState extends State<HistoryTab> {
                                       ],
                                     ),
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.navigate_next,
                                     color: Colors.black,
                                   )
@@ -178,20 +179,20 @@ class _HistoryTabState extends State<HistoryTab> {
                 backgroundColor: Colors.teal,
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: const Text(
+                  title: Text(
                     "History",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: ThemeColors().getTitleColors()),
                   ),
                   background: Stack(
                     fit: StackFit.expand,
                     children: [
                       DecoratedBox(
-                          decoration: BoxDecoration(color: Colors.black))
+                          decoration: BoxDecoration(color: ThemeColors().getTitleBarColors()))
                     ],
                   ),
                 ),
               ),
-              SliverFillRemaining(
+              const SliverFillRemaining(
                 child: Center(
                   child: Text('No hours stored', style: TextStyle(fontSize: 16)),
                 ),

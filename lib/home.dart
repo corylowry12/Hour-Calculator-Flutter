@@ -34,12 +34,14 @@ class _HomeTabState extends State<HomeTab> {
         inTimeTime = prefs.getString('inTimeTime').toString();
       }
       else {
+        prefs.setString('inTimeTime', DateTime.now().toString());
         inTimeTime = DateTime.now().toString();
       }
       if (prefs.containsKey('outTimeTime')) {
         outTimeTime = prefs.getString('outTimeTime').toString();
       }
       else {
+        prefs.setString('outTimeTime', DateTime.now().toString());
         outTimeTime = DateTime.now().toString();
       }
     });
@@ -103,7 +105,7 @@ class _HomeTabState extends State<HomeTab> {
                 normalTextStyle: const TextStyle(fontSize: 20),
                 highlightedTextStyle: const TextStyle(fontSize: 24),
                 isForce2Digits: true,
-                time: inTimeTime != '' ? DateTime.parse(inTimeTime) : DateTime.now(),
+                time: DateTime.parse(inTimeTime),
                 minutesInterval: 1,
                 onTimeChange: (time) {
                   _saveInTime(time.toString());
@@ -121,7 +123,7 @@ class _HomeTabState extends State<HomeTab> {
                 normalTextStyle: const TextStyle(fontSize: 20),
                 highlightedTextStyle: const TextStyle(fontSize: 24),
                 isForce2Digits: true,
-                time: outTimeTime != '' ? DateTime.parse(outTimeTime) : DateTime.now(),
+                time: DateTime.parse(outTimeTime),
                 minutesInterval: 1,
                 onTimeChange: (time) {
                   saveOutTime(time.toString());

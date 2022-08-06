@@ -1,7 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cory.hourcalculator.hour_calculator_flutter"
-    android:versionCode="133"
-    android:versionName="10.0.0">
+    package="com.cory.hourcalculator.hour_calculator_flutter">
    <application
         android:label="Hour Calculator"
         android:icon="@mipmap/ic_launcher">
