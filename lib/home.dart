@@ -105,7 +105,7 @@ class _HomeTabState extends State<HomeTab> {
                 normalTextStyle: const TextStyle(fontSize: 20),
                 highlightedTextStyle: const TextStyle(fontSize: 24),
                 isForce2Digits: true,
-                time: DateTime.parse(inTimeTime),
+                time: inTimeTime == '' ? DateTime.now() : DateTime.parse(inTimeTime),
                 minutesInterval: 1,
                 onTimeChange: (time) {
                   _saveInTime(time.toString());
@@ -123,7 +123,7 @@ class _HomeTabState extends State<HomeTab> {
                 normalTextStyle: const TextStyle(fontSize: 20),
                 highlightedTextStyle: const TextStyle(fontSize: 24),
                 isForce2Digits: true,
-                time: DateTime.parse(outTimeTime),
+                time: outTimeTime == '' ? DateTime.now() : DateTime.parse(outTimeTime),
                 minutesInterval: 1,
                 onTimeChange: (time) {
                   saveOutTime(time.toString());

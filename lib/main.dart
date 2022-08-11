@@ -16,7 +16,7 @@ ThemeData buildLightTheme() {
       useMaterial3: true,
       navigationBarTheme: NavigationBarThemeData(
         indicatorColor: Colors.teal,
-        iconTheme: MaterialStateProperty.all<IconThemeData>(IconThemeData(
+        iconTheme: MaterialStateProperty.all<IconThemeData>(const IconThemeData(
           color: Colors.black
         ))
       )
@@ -29,7 +29,14 @@ ThemeData buildDarkTheme() {
       backgroundColor: Colors.black,
       primaryColor: Colors.teal,
       scaffoldBackgroundColor: Colors.black,
-      useMaterial3: true);
+      useMaterial3: true,
+      navigationBarTheme: NavigationBarThemeData(
+      indicatorColor: Colors.teal,
+      iconTheme: MaterialStateProperty.all<IconThemeData>(const IconThemeData(
+          color: Colors.white
+      ))
+  )
+  );
 }
 
 void main() {
@@ -93,93 +100,95 @@ class _ThemeManagement extends State<ThemeManagement> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
 
-    return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              expandedHeight: 150.0,
-              floating: false,
-              pinned: true,
-              elevation: 0,
-              centerTitle: true,
-              backgroundColor: Colors.teal,
-              flexibleSpace: FlexibleSpaceBar(
+    return SafeArea(
+      child: Scaffold(
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                expandedHeight: 150.0,
+                floating: false,
+                pinned: true,
+                elevation: 0,
                 centerTitle: true,
-                title: Text(
-                  "Theme Management",
-                  style: TextStyle(color: ThemeColors().getTitleColors()),
+                backgroundColor: Colors.teal,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  title: Text(
+                    "Theme Management",
+                    style: TextStyle(color: ThemeColors().getTitleColors()),
+                  ),
+                  background: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      DecoratedBox(decoration: BoxDecoration(color: ThemeColors().getTitleBarColors()))
+                    ],
+                  ),
                 ),
-                background: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    DecoratedBox(decoration: BoxDecoration(color: ThemeColors().getTitleBarColors()))
-                  ],
+              )
+            ];
+          },
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text("Background Theme",
+                      style: TextStyle(
+                          color: Colors.teal, fontWeight: FontWeight.bold)),
                 ),
-              ),
-            )
-          ];
-        },
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text("Background Theme",
-                    style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold)),
-              ),
-              ListTile(
-                title: Text('Light Theme'),
-                leading: Radio(
-                  focusColor: Colors.teal,
-                  fillColor:
-                      MaterialStateColor.resolveWith((states) => Colors.teal),
-                  value: 0,
-                  groupValue: groupID,
-                  activeColor: Colors.green,
-                  onChanged: (value) {
+                ListTile(
+                  title: Text('Light Theme'),
+                  leading: Radio(
+                    focusColor: Colors.teal,
+                    fillColor:
+                        MaterialStateColor.resolveWith((states) => Colors.teal),
+                    value: 0,
+                    groupValue: groupID,
+                    activeColor: Colors.green,
+                    onChanged: (value) {
+                      appModel.darkTheme = false;
+                      setState(() {
+                        groupID = 0;
+                      });
+                    },
+                  ),
+                  onTap: () {
                     appModel.darkTheme = false;
                     setState(() {
                       groupID = 0;
                     });
                   },
                 ),
-                onTap: () {
-                  appModel.darkTheme = false;
-                  setState(() {
-                    groupID = 0;
-                  });
-                },
-              ),
-              ListTile(
-                title: Text('Dark Theme'),
-                leading: Radio(
-                  focusColor: Colors.teal,
-                  fillColor:
-                      MaterialStateColor.resolveWith((states) => Colors.teal),
-                  value: 1,
-                  groupValue: groupID,
-                  activeColor: Colors.green,
-                  onChanged: (value) {
+                ListTile(
+                  title: Text('Dark Theme'),
+                  leading: Radio(
+                    focusColor: Colors.teal,
+                    fillColor:
+                        MaterialStateColor.resolveWith((states) => Colors.teal),
+                    value: 1,
+                    groupValue: groupID,
+                    activeColor: Colors.green,
+                    onChanged: (value) {
+                      appModel.darkTheme = true;
+                      groupID = 1;
+                      setState(() {
+                      });
+                    },
+                  ),
+                  onTap: () {
                     appModel.darkTheme = true;
                     groupID = 1;
                     setState(() {
                     });
                   },
-                ),
-                onTap: () {
-                  appModel.darkTheme = true;
-                  groupID = 1;
-                  setState(() {
-                  });
-                },
-              )
-            ],
+                )
+              ],
+            ),
           ),
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

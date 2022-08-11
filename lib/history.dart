@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hour_calculator_flutter/HoursDB.dart';
 import 'package:hour_calculator_flutter/HoursModel.dart';
 import 'package:hour_calculator_flutter/ThemeColors.dart';
@@ -18,8 +19,7 @@ class _HistoryTabState extends State<HistoryTab> {
   @override
   void initState() {
     super.initState();
-
-    refreshNotes();
+    refreshHistory();
   }
 
   @override
@@ -29,7 +29,7 @@ class _HistoryTabState extends State<HistoryTab> {
     super.dispose();
   }
 
-  void refreshNotes() async {
+  void refreshHistory() async {
     setState(() => isLoading = true);
     hours = await HoursDatabase.instance.readAllNotes();
 
@@ -38,7 +38,7 @@ class _HistoryTabState extends State<HistoryTab> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      body: !hours.isEmpty
+      body: hours.isNotEmpty
           ? CustomScrollView(slivers: <Widget>[
               //2
               SliverAppBar(
@@ -75,7 +75,8 @@ class _HistoryTabState extends State<HistoryTab> {
                                   backgroundColor: const Color(0xffb2fdda),
                                   title: const Text("Info",
                                       style: TextStyle(color: Colors.black)),
-                                  content: Text("Total Hours: ${total.toStringAsFixed(2)}",
+                                  content: Text("Total Hours: ${total.toStringAsFixed(2)}\n"
+                                                "Number of Entries: ${hours.length}",
                                       style: const TextStyle(color: Colors.black)),
                                   actions: [
                                     TextButton(
@@ -88,8 +89,8 @@ class _HistoryTabState extends State<HistoryTab> {
                                   ],
                                 ));
                       },
-                      icon: Icon(Icons.info)),
-                  SizedBox(width: 20),
+                      icon: const Icon(Icons.info)),
+                  const SizedBox(width: 20),
                 ],
               ),
 
@@ -103,6 +104,29 @@ class _HistoryTabState extends State<HistoryTab> {
 
                     return Dismissible(
                         key: Key(hour.id.toString()),
+                        confirmDismiss: (direction) async {
+                          return showDialog(
+                              context: context,
+                              builder: (_) => AlertDialog(
+                                backgroundColor: const Color(0xffb2fdda),
+                                title: const Text("Delete?",
+                                    style: TextStyle(color: Colors.black)),
+                                content: const Text("Would you like to delete this hour?",
+                                    style: TextStyle(color: Colors.black)),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () => Navigator.of(context).pop(false),
+                                      child: const Text("No",
+                                          style:
+                                          TextStyle(color: Colors.teal))),
+                                  TextButton(
+                                      onPressed: () => Navigator.of(context).pop(true),
+                                      child: const Text("Yes",
+                                          style:
+                                          TextStyle(color: Colors.teal)))
+                                ],
+                              ));
+                        },
                         background: Container(
                           alignment: AlignmentDirectional.centerEnd,
                           color: Colors.red,
@@ -115,6 +139,14 @@ class _HistoryTabState extends State<HistoryTab> {
                           ),
                         ),
                         onDismissed: (direction) {
+                          Fluttertoast.showToast(
+                            msg: "Item Deleted",
+                            toastLength: Toast.LENGTH_SHORT,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: Colors.black,
+                            textColor: Colors.white,
+                            fontSize: 16.0,
+                          );
                           setState(() {
                             HoursDatabase.instance.delete(hour.id!);
                             hours.removeAt(index);
@@ -140,19 +172,24 @@ class _HistoryTabState extends State<HistoryTab> {
                                       children: <Widget>[
                                         Text('In Time: ${hour.inTime}',
                                             style: const TextStyle(
-                                                color: Colors.black)),
+                                                color: Colors.black,
+                                            fontSize: 16)),
                                         Text('Out Time: ${hour.outTime}',
                                             style: const TextStyle(
-                                                color: Colors.black)),
+                                                color: Colors.black,
+                                                fontSize: 16)),
                                         Text('Break Time: ${hour.breakTime}',
                                             style: const TextStyle(
-                                                color: Colors.black)),
+                                                color: Colors.black,
+                                                fontSize: 16)),
                                         Text('Total: ${hour.totalHours}',
                                             style: const TextStyle(
-                                                color: Colors.black)),
+                                                color: Colors.black,
+                                                fontSize: 16)),
                                         Text('Date: $formatted',
                                             style: const TextStyle(
-                                                color: Colors.black)),
+                                                color: Colors.black,
+                                                fontSize: 16)),
                                       ],
                                     ),
                                   ),
