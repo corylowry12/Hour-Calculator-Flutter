@@ -188,7 +188,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
                                 await FlutterDynamicIcon.setAlternateIconName(
-                                    "blue_icon");
+                                    "blue_logo");
                                 print("App icon change successful");
                                 return;
                               }
@@ -214,7 +214,7 @@ class _AccentThemeState extends State<AccentTheme> {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
                               await FlutterDynamicIcon.setAlternateIconName(
-                                  "blue_icon");
+                                  "blue_logo");
                               print("App icon change successful");
                               return;
                             }
