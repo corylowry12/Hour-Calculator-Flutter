@@ -389,14 +389,14 @@ class _HistoryTabState extends State<HistoryTab> {
                           title: Text(
                             "History",
                           ),
-                          /*background: Stack(
+                          background: Stack(
                             fit: StackFit.expand,
                             children: [
                               DecoratedBox(
                                   decoration: BoxDecoration(
-                                      color: ThemeColors().getTitleBarColors()))
+                                      color: Colors.blueGrey))
                             ],
-                          ),*/
+                          ),
                         ),
                       ),
                       const SliverFillRemaining(
