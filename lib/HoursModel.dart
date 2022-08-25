@@ -49,7 +49,7 @@ class Hour {
       );
 
   static Hour fromJson(Map<String, Object?> json) => Hour(
-    id: json[HoursFields.id] as int?,
+    id: json[HoursFields.id] as int,
     inTime: json[HoursFields.inTime].toString(),
     outTime: json[HoursFields.outTime].toString(),
     breakTime: json[HoursFields.breakTime].toString(),
