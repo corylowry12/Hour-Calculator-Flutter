@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:hour_calculator_flutter/AppModel.dart';
 import 'package:hour_calculator_flutter/ThemeColors.dart';
+import 'package:hour_calculator_flutter/accent_theme.dart';
 import 'package:hour_calculator_flutter/home.dart';
 import 'package:hour_calculator_flutter/main.dart';
 import 'package:flutter/services.dart';
@@ -18,11 +19,20 @@ class SettingsTab extends StatefulWidget {
   _SettingsTabState createState() => _SettingsTabState();
 }
 
+int accent = 0xFF009688;
+
 class _SettingsTabState extends State<SettingsTab> {
+
+  getTheme() async {
+    accent = await globals.appPreference.getAccentTheme();
+    setState(() {
+
+    });
+  }
 
   @override
   void initState() {
-    appModel.appPreference.getTheme();
+    getTheme();
     setState(() {
     });
     super.initState();
@@ -46,76 +56,81 @@ class _SettingsTabState extends State<SettingsTab> {
               pinned: true,
               elevation: 0,
               centerTitle: true,
-              backgroundColor: Colors.teal,
+              backgroundColor: Color(accent),
               flexibleSpace: FlexibleSpaceBar(
+                background: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      DecoratedBox(decoration: BoxDecoration(color: Colors.blueGrey))
+                    ]),
                 centerTitle: true,
                 title: Text(
-                  "Settings",
-                  style: TextStyle(color: ThemeColors().getTitleColors()),
-                ),
-                background: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    DecoratedBox(decoration: BoxDecoration(color: ThemeColors().getTitleBarColors()))
-                  ],
+                  "Settings"),
                 ),
               ),
-            )
           ];
         },
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
+              Padding(
+                padding: EdgeInsets.only(left: 20, top: 10),
                 child: Text("Appearance",
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold)),
+                        color: Color(accent), fontWeight: FontWeight.bold)),
               ),
               ListTile(
-                leading: Icon(Icons.palette, color: ThemeColors().getColors()),
-                title: Text("Theme Management",
-                    style: TextStyle(color: ThemeColors().getTitleColors())),
-                subtitle: Text("Customize the theme of the app",
-                    style: TextStyle(color: ThemeColors().getSubtitleColors())),
-                trailing: Icon(Icons.chevron_right, color: ThemeColors().getColors()),
+                leading: Icon(Icons.dark_mode_outlined),
+                title: Text("Dark Mode"),
+                subtitle: Text("Choose dark, light or follow system"),
+                trailing: Icon(Icons.chevron_right),
                 onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => ThemeManagement())).then((value) {
-                          setState(() {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ThemeManagement())).then((value) {
+                    setState(() {
 
-                          });
                     });
+                  });
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.palette_outlined),
+                title: Text("Accent Color"),
+                subtitle: Text("Choose from multiple different accent colors"),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AccentTheme())).then((value) {
+                    setState(() {
+                      getTheme();
+                    });
+                  });
                 },
               ),
               Visibility(
                 visible: false,
                 child: ListTile(
-                  leading: Icon(Icons.dashboard_customize, color: ThemeColors().getColors()),
-                  title: Text("Home Screen Layout",
-                      style: TextStyle(color: ThemeColors().getTitleColors())),
-                  subtitle: Text("Customize the theme of the app",
-                      style: TextStyle(color: ThemeColors().getSubtitleColors())),
-                  trailing: Icon(Icons.chevron_right, color: ThemeColors().getColors()),
+                  leading: Icon(Icons.dashboard_customize),
+                  title: Text("Home Screen Layout"),
+                  subtitle: Text("Customize the theme of the app"),
+                  trailing: Icon(Icons.chevron_right),
                   onTap: () {
 
                   },
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
+              Padding(
+                padding: EdgeInsets.only(left: 20, top: 10),
                 child: Text("Updates",
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold)),
+                        color: Color(accent), fontWeight: FontWeight.bold)),
               ),
               ListTile(
-                leading: Icon(Icons.update, color: ThemeColors().getColors()),
-                title: Text("Patch Notes",
-                    style: TextStyle(color: ThemeColors().getTitleColors())),
-                subtitle: Text("View Changes in this update",
-                    style: TextStyle(color: ThemeColors().getSubtitleColors())),
-                trailing: Icon(Icons.chevron_right, color: ThemeColors().getColors()),
+                leading: Icon(Icons.update),
+                title: Text("Patch Notes"),
+                subtitle: Text("View Changes in this update"),
+                trailing: Icon(Icons.chevron_right),
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => PatchNotes())).then((value) {
@@ -128,12 +143,10 @@ class _SettingsTabState extends State<SettingsTab> {
               Visibility(
                 visible: false,
                 child: ListTile(
-                  leading: Icon(Icons.settings_applications, color: ThemeColors().getColors()),
-                  title: Text("Update Settings",
-                      style: TextStyle(color: ThemeColors().getTitleColors())),
-                  subtitle: Text("Customize settings affiliated with updates",
-                      style: TextStyle(color: ThemeColors().getSubtitleColors())),
-                  trailing: Icon(Icons.chevron_right, color: ThemeColors().getColors()),
+                  leading: Icon(Icons.settings_applications),
+                  title: Text("Update Settings"),
+                  subtitle: Text("Customize settings affiliated with updates"),
+                  trailing: Icon(Icons.chevron_right),
                   onTap: () {
                   },
                 ),

@@ -25,8 +25,8 @@ class HoursDatabase {
   }
 
   Future _createDB(Database db, int version) async {
-    final idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
-    final textType = 'TEXT NOT NULL';
+    const idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
+    const textType = 'TEXT NOT NULL';
 
     await db.execute('''
 CREATE TABLE $tableHours ( 
@@ -55,7 +55,7 @@ CREATE TABLE $tableHours (
     return note.copy(id: id);
   }
 
-  Future<Hour> readNote(int id) async {
+  Future<Hour> readHour(int id) async {
     final db = await instance.database;
 
     final maps = await db.query(
@@ -84,15 +84,18 @@ CREATE TABLE $tableHours (
     return result.map((json) => Hour.fromJson(json)).toList();
   }
 
-  Future<int> update(Hour note) async {
-    final db = await instance.database;
+  Future<int> update(Hour note, int itemID) async {
+    /*final db = await instance.database;
 
-    return db.update(
+    return await db.update(
       tableHours,
       note.toJson(),
       where: '${HoursFields.id} = ?',
-      whereArgs: [note.id],
-    );
+      whereArgs: [itemID],
+    );*/
+    
+    final db = await instance.database;
+    return await db.rawUpdate('UPDATE $tableHours SET ${HoursFields.inTime} = ?, ${HoursFields.outTime} = ?, ${HoursFields.breakTime} = ?, ${HoursFields.totalHours} = ? WHERE ${HoursFields.id} = ?', [note.inTime, note.outTime, note.breakTime, note.totalHours, itemID]);
   }
 
   Future<int> delete(int id) async {
@@ -102,6 +105,16 @@ CREATE TABLE $tableHours (
       tableHours,
       where: '${HoursFields.id} = ?',
       whereArgs: [id],
+    );
+  }
+
+  Future<int> deleteAll() async {
+    final db = await instance.database;
+
+    return await db.delete(
+      tableHours,
+      where: null,
+      whereArgs: null,
     );
   }
 

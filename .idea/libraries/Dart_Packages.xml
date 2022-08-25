@@ -2,10 +2,24 @@
   <library name="Dart Packages" type="DartPackagesLibraryType">
     <properties>
       <option name="packageNameToDirsMap">
+        <entry key="adaptive_theme">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/adaptive_theme-3.1.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="async">
           <value>
             <list>
               <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="badges">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.3/lib" />
             </list>
           </value>
         </entry>
@@ -75,7 +89,14 @@
         <entry key="file">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flex_color_picker">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flex_color_picker-2.5.0/lib" />
             </list>
           </value>
         </entry>
@@ -93,10 +114,24 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_dynamic_icon">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_dynamic_icon-2.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_lints">
           <value>
             <list>
               <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_slidable">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-2.0.0/lib" />
             </list>
           </value>
         </entry>
@@ -131,7 +166,7 @@
         <entry key="google_mobile_ads">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-2.0.0/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-2.0.1/lib" />
             </list>
           </value>
         </entry>
@@ -215,7 +250,7 @@
         <entry key="path_provider_windows">
           <value>
             <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.1/lib" />
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.2/lib" />
             </list>
           </value>
         </entry>
@@ -380,6 +415,13 @@
             </list>
           </value>
         </entry>
+        <entry key="visibility_detector">
+          <value>
+            <list>
+              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/visibility_detector-0.3.3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="win32">
           <value>
             <list>
@@ -397,7 +439,9 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/adaptive_theme-3.1.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/badges-2.0.3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1/lib" />
@@ -407,12 +451,15 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/date_time_picker-2.1.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-2.0.1/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.2/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.4/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flex_color_picker-2.5.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_displaymode-0.4.0/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_dynamic_icon-2.1.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-2.0.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_time_picker_spinner-2.0.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.9/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-2.0.0/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-2.0.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.0/lib" />
@@ -424,7 +471,7 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.7/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_platform_interface-2.0.4/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.1/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.2/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.4/lib" />
@@ -447,6 +494,7 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.9/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.2/lib" />
+      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/visibility_detector-0.3.3/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/win32-2.7.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/xdg_directories-0.2.0+1/lib" />
       <root url="file://C:/flutter/bin/cache/pkg/sky_engine/lib" />
