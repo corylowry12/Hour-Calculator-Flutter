@@ -183,7 +183,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFF2196F3;
                           globals.appPreference.setAccentThemeInt(1);
 
-                          if (Platform.isIOS) {
+                      
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -197,7 +197,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          
                           setState(() {
 
                           });

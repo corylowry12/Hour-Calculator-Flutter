@@ -74,11 +74,6 @@
 		32FA573928B8366C00202F9A /* App Icons */ = {
 			isa = PBXGroup;
 			children = (
-				32FA573D28B8368400202F9A /* blue_logo.png */,
-				32FA573A28B8368400202F9A /* orange_logo.png */,
-				32FA573B28B8368400202F9A /* purple_logo.png */,
-				32FA573C28B8368400202F9A /* red_logo.png */,
-				32FA573E28B8368400202F9A /* teal_logo.png */,
 			);
 			path = "App Icons";
 			sourceTree = "<group>";
@@ -124,6 +119,11 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				32FA573D28B8368400202F9A /* blue_logo.png */,
+				32FA573A28B8368400202F9A /* orange_logo.png */,
+				32FA573B28B8368400202F9A /* purple_logo.png */,
+				32FA573C28B8368400202F9A /* red_logo.png */,
+				32FA573E28B8368400202F9A /* teal_logo.png */,
 				32FA573928B8366C00202F9A /* App Icons */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
