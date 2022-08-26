@@ -5,7 +5,6 @@ import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_dynamic_icon/flutter_dynamic_icon.dart';
 import 'package:hour_calculator_flutter/AppPreference.dart';
 import 'config.dart' as globals;
 
@@ -118,7 +117,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFF009688;
                           globals.appPreference.setAccentThemeInt(0);
 
-                          if (Platform.isIOS) {
+                          /*if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -132,7 +131,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          }*/
                           setState(() {
 
                           });
@@ -144,7 +143,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         accent = 0xFF009688;
                         globals.appPreference.setAccentThemeInt(0);
 
-                        if (Platform.isIOS) {
+                       /* if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -158,7 +157,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
 
                         });
@@ -183,7 +182,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFF2196F3;
                           globals.appPreference.setAccentThemeInt(1);
 
-                          if (Platform.isIOS) {
+                         /* if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -197,7 +196,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          }*/
                           setState(() {
 
                           });
@@ -209,7 +208,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         accent = 0xFF2196F3;
                         globals.appPreference.setAccentThemeInt(1);
 
-                        if (Platform.isIOS) {
+                      /*  if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -223,7 +222,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
 
                         });
@@ -248,7 +247,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFFFF9800;
                           globals.appPreference.setAccentThemeInt(2);
 
-                          if (Platform.isIOS) {
+                          /*if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -262,7 +261,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          }*/
                           setState(() {
 
                           });
@@ -274,7 +273,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         accent = 0xFFFF9800;
                         globals.appPreference.setAccentThemeInt(2);
 
-                        if (Platform.isIOS) {
+                       /* if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -288,7 +287,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
 
                         });
@@ -313,7 +312,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFFE91E63;
                           globals.appPreference.setAccentThemeInt(3);
 
-                          if (Platform.isIOS) {
+                          /*if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -327,7 +326,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          }*/
                           setState(() {
 
                           });
@@ -339,7 +338,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         globals.appPreference.setAccentThemeInt(3);
                         accent = 0xFFE91E63;
 
-                        if (Platform.isIOS) {
+                        /*if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -353,7 +352,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
 
                         });
@@ -378,7 +377,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           accent = 0xFFF44336;
                           globals.appPreference.setAccentThemeInt(4);
 
-                          if (Platform.isIOS) {
+                          /*if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
                                   .supportsAlternateIcons) {
@@ -392,7 +391,7 @@ class _AccentThemeState extends State<AccentTheme> {
                                 print("Failed to change app icon");
                               }
                             }
-                          }
+                          }*/
                           setState(() {
 
                           });
@@ -404,7 +403,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         globals.appPreference.setAccentThemeInt(4);
                         accent = 0xFFF44336;
 
-                        if (Platform.isIOS) {
+                        /*if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -418,7 +417,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
 
                         });
@@ -438,8 +437,63 @@ class _AccentThemeState extends State<AccentTheme> {
                         value: 5,
                         groupValue: groupID,
                         activeColor: Colors.green,
-                        onChanged: (value) {
+                        onChanged: (value) async {
+                          final newColor = await showColorPickerDialog(
+                            // The dialog needs a context, we pass it in.
+                            context,
+                            // We use the dialogSelectColor, as its starting color.
+                            Colors.deepPurple,
+                            title: Text('Custom Color',
+                                style: Theme.of(context).textTheme.headline6),
+                            width: 40,
+                            height: 40,
+                            spacing: 5,
+                            runSpacing: 5,
+                            borderRadius: 20,
+                            wheelDiameter: 165,
+                            enableOpacity: false,
+                            barrierDismissible: false,
+                            showColorCode: true,
+                            colorCodeHasColor: true,
+                            pickersEnabled: <ColorPickerType, bool>{
+                              ColorPickerType.both: false,
+                              ColorPickerType.primary: true,
+                              ColorPickerType.accent: true,
+                              ColorPickerType.bw: false,
+                              ColorPickerType.custom: false,
+                              ColorPickerType.wheel: true
+                            },
+                            hasBorder: true,
+                            enableShadesSelection: true,
+                            subheading: Text('Select color shade'),
+                            enableTonalPalette: false,
+                            heading: Text('Select Color', style: Theme.of(context).textTheme.headline6),
+                            recentColorsSubheading: Text('Recently Used Colors'),
+                            customColorSwatchesAndNames: customSwatches,
+                            copyPasteBehavior: const ColorPickerCopyPasteBehavior(
+                              copyButton: false,
+                              pasteButton: false,
+                              longPressMenu: false,
+                            ),
+                            actionButtons: const ColorPickerActionButtons(
+                              okButton: true,
+                              closeButton: false,
+                              dialogActionButtons: false,
+                            ),
+                            constraints: const BoxConstraints(
+                                minHeight: 480, minWidth: 320, maxWidth: 320),
+                          );
+                          groupID = 5;
+                          globals.appPreference.setAccentThemePref(5);
+                          globals.appPreference.setAccentThemeInt(5);
+                          globals.appPreference.setCustomAccentThemePref(int.parse("0x${newColor.hexAlpha}"));
+                          globals.appPreference.setCustomAccentThemePrefText("0x${newColor.hexAlpha}");
+                          accent = int.parse("0x${newColor.hexAlpha}");
+                          customAccent = int.parse("0x${newColor.hexAlpha}");
+                          customAccentText = "0x${newColor.hexAlpha}";
+                          setState(() {
 
+                          });
                         },
                       ),
                       onTap: () async {
@@ -482,7 +536,7 @@ class _AccentThemeState extends State<AccentTheme> {
                           ),
                           actionButtons: const ColorPickerActionButtons(
                             okButton: true,
-                            closeButton: true,
+                            closeButton: false,
                             dialogActionButtons: false,
                           ),
                           constraints: const BoxConstraints(
@@ -497,7 +551,7 @@ class _AccentThemeState extends State<AccentTheme> {
                         customAccent = int.parse("0x${newColor.hexAlpha}");
                         customAccentText = "0x${newColor.hexAlpha}";
 
-                        if (Platform.isIOS) {
+                       /* if (Platform.isIOS) {
                           try {
                             if (await FlutterDynamicIcon
                                 .supportsAlternateIcons) {
@@ -511,7 +565,7 @@ class _AccentThemeState extends State<AccentTheme> {
                               print("Failed to change app icon");
                             }
                           }
-                        }
+                        }*/
                         setState(() {
                         });
                       },
