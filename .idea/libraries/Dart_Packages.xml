@@ -114,13 +114,6 @@
             </list>
           </value>
         </entry>
-        <entry key="flutter_dynamic_icon">
-          <value>
-            <list>
-              <option value="C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_dynamic_icon-2.1.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="flutter_lints">
           <value>
             <list>
@@ -454,7 +447,6 @@
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.4/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flex_color_picker-2.5.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_displaymode-0.4.0/lib" />
-      <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_dynamic_icon-2.1.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-2.0.0/lib" />
       <root url="file://C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_time_picker_spinner-2.0.0/lib" />

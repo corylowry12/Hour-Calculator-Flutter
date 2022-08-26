@@ -16,6 +16,7 @@ int accent = 0xFF009688;
 ThemeData buildLightTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
+    brightness: Brightness.light,
       cardColor: Colors.white,
       backgroundColor: Colors.white,
       primaryColor: Color(accent),
@@ -60,6 +61,7 @@ ThemeData buildLightTheme() {
 ThemeData buildDarkTheme() {
   final ThemeData base = ThemeData.dark();
   return base.copyWith(
+    brightness: Brightness.dark,
       backgroundColor: Colors.black,
       scaffoldBackgroundColor: Colors.black,
       useMaterial3: true,
