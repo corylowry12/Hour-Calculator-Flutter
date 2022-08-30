@@ -28,15 +28,12 @@ List<Hour> hours = <Hour>[];
 int accent = 0xFF009688;
 
 class _HistoryTabState extends State<HistoryTab> {
-
   bool isLoading = false;
   final _mainScrollController = ScrollController();
 
   getTheme() async {
     accent = await globals.appPreference.getAccentTheme();
-    setState(() {
-
-    });
+    setState(() {});
   }
 
   @override
@@ -88,16 +85,16 @@ class _HistoryTabState extends State<HistoryTab> {
                             centerTitle: true,
                             backgroundColor: Color(accent),
                             flexibleSpace: FlexibleSpaceBar(
-                              background: Stack(
-                                  fit: StackFit.expand,
-                                  children: [
-                                    DecoratedBox(decoration: BoxDecoration(color: Colors.blueGrey))
-                                  ]),
+                              background:
+                                  Stack(fit: StackFit.expand, children: [
+                                DecoratedBox(
+                                    decoration:
+                                        BoxDecoration(color: Colors.blueGrey))
+                              ]),
                               centerTitle: true,
-                              title: Text(
-                                "History"),
-                              ),
-                              /*background: Stack(
+                              title: Text("History"),
+                            ),
+                            /*background: Stack(
                                 fit: StackFit.expand,
                                 children: [
                                   DecoratedBox(
@@ -136,7 +133,7 @@ class _HistoryTabState extends State<HistoryTab> {
                                                     child: Text("OK",
                                                         style: TextStyle(
                                                             color:
-                                                            Color(accent))))
+                                                                Color(accent))))
                                               ],
                                             ));
                                   },
@@ -162,8 +159,8 @@ class _HistoryTabState extends State<HistoryTab> {
                                                     },
                                                     child: Text("No",
                                                         style: TextStyle(
-                                                            color:
-                                                            Color(accent)))),
+                                                            color: Color(
+                                                                accent)))),
                                                 TextButton(
                                                     onPressed: () {
                                                       hourCount = 0;
@@ -180,7 +177,7 @@ class _HistoryTabState extends State<HistoryTab> {
                                                     child: Text("Yes",
                                                         style: TextStyle(
                                                             color:
-                                                            Color(accent))))
+                                                                Color(accent))))
                                               ],
                                             ));
                                   },
@@ -206,26 +203,27 @@ class _HistoryTabState extends State<HistoryTab> {
                                           dragDismissible: false,
                                           children: [
                                             SlidableAction(
-                                              // An action can be bigger than the others.
-                                              flex: 2,
-                                              backgroundColor: Color(0xFFEB9E34),
-                                              foregroundColor: Colors.white,
-                                              icon: Icons.edit_note_outlined,
-                                              label: 'Edit',
-                                              onPressed: ((context) async {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) => Edit(hours[index].id!, hour),
-                                                  ),
-                                                ).then((value) => setState(() {
-                                                  refreshHistory();
-                                                }));
-                                  }
-                                              )
-                                      )
-                                      ]
-                                          ),
+                                                // An action can be bigger than the others.
+                                                flex: 2,
+                                                backgroundColor:
+                                                    Color(0xFFEB9E34),
+                                                foregroundColor: Colors.white,
+                                                icon: Icons.edit_note_outlined,
+                                                label: 'Edit',
+                                                onPressed: ((context) async {
+                                                  Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          Edit(hours[index].id!,
+                                                              hour),
+                                                    ),
+                                                  ).then(
+                                                      (value) => setState(() {
+                                                            refreshHistory();
+                                                          }));
+                                                }))
+                                          ]),
                                       endActionPane: ActionPane(
                                           dismissible:
                                               DismissiblePane(onDismissed: () {
@@ -279,20 +277,24 @@ class _HistoryTabState extends State<HistoryTab> {
                                                 ScaffoldMessenger.of(context)
                                                   ..removeCurrentSnackBar()
                                                   ..showSnackBar(SnackBar(
-                                                    behavior:
-                                                        SnackBarBehavior.floating,
-                                                    content: Text('Item Deleted'),
+                                                    behavior: SnackBarBehavior
+                                                        .floating,
+                                                    content:
+                                                        Text('Item Deleted'),
                                                     duration:
                                                         Duration(seconds: 5),
                                                     action: SnackBarAction(
                                                       label: 'Undo',
                                                       textColor: Color(accent),
                                                       onPressed: () {
-                                                        hours.insert(index, hour);
-                                                        hourCount = hours.length;
+                                                        hours.insert(
+                                                            index, hour);
+                                                        hourCount =
+                                                            hours.length;
                                                         badgeModel
                                                                 .setInformation =
-                                                            hourCount.toString();
+                                                            hourCount
+                                                                .toString();
                                                         setState(() {});
                                                       },
                                                     ),
@@ -301,70 +303,89 @@ class _HistoryTabState extends State<HistoryTab> {
                                             )
                                           ]),
                                       child: Padding(
-                                        padding: EdgeInsets.only(left: 10, right: 10),
+                                        padding: EdgeInsets.only(
+                                            left: 10, right: 10),
                                         child: InkWell(
                                           onTap: () async {
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) => Edit(hours[index].id!, hour),
+                                                builder: (context) => Edit(
+                                                    hours[index].id!, hour),
                                               ),
                                             ).then((value) => setState(() {
-                                              refreshHistory();
-                                            }));
+                                                  refreshHistory();
+                                                }));
                                           },
                                           child: Card(
-                                                color: Color(accent),
-                                                shape: const RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.all(
-                                                        Radius.circular(28))),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(16.0),
-                                                  child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.spaceBetween,
-                                                    children: <Widget>[
-                                                      Expanded(
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment.start,
-                                                          mainAxisSize:
-                                                              MainAxisSize.min,
-                                                          children: <Widget>[
-                                                            Text(
-                                                                'In Time: ${hour.inTime}',
-                                                                style: const TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 16)),
-                                                            Text(
-                                                                'Out Time: ${hour.outTime}',
-                                                                style: const TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 16)),
-                                                            Text(
-                                                                'Break Time: ${hour.breakTime}',
-                                                                style: const TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 16)),
-                                                            Text(
-                                                                'Total: ${hour.totalHours}',
-                                                                style: const TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 16)),
-                                                            Text('Date: $formatted',
-                                                                style: const TextStyle(
-                                                                    color: Colors.black,
-                                                                    fontSize: 16)),
-                                                          ],
-                                                        ),
+                                              color: Color(accent),
+                                              shape:
+                                                  const RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  28))),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(16.0),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: <Widget>[
+                                                    Expanded(
+                                                      child: Column(
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        children: <Widget>[
+                                                          Text(
+                                                              'In Time: ${hour.inTime}',
+                                                              style: const TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      16)),
+                                                          Text(
+                                                              'Out Time: ${hour.outTime}',
+                                                              style: const TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      16)),
+                                                          Text(
+                                                              'Break Time: ${hour.breakTime}',
+                                                              style: const TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      16)),
+                                                          Text(
+                                                              'Total: ${hour.totalHours}',
+                                                              style: const TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      16)),
+                                                          Text(
+                                                              'Date: $formatted',
+                                                              style: const TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize:
+                                                                      16)),
+                                                        ],
                                                       ),
-                                                      const Icon(
-                                                        Icons.navigate_next,
-                                                        color: Colors.black,
-                                                      )
-                                                    ],
-                                                  ),
-                                                )),
+                                                    ),
+                                                    const Icon(
+                                                      Icons.navigate_next,
+                                                      color: Colors.black,
+                                                    )
+                                                  ],
+                                                ),
+                                              )),
                                         ),
                                       ));
                                 },
@@ -383,20 +404,15 @@ class _HistoryTabState extends State<HistoryTab> {
                         pinned: true,
                         elevation: 0,
                         centerTitle: true,
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: Color(accent),
                         flexibleSpace: FlexibleSpaceBar(
+                          background: Stack(fit: StackFit.expand, children: [
+                            DecoratedBox(
+                                decoration:
+                                    BoxDecoration(color: Colors.blueGrey))
+                          ]),
                           centerTitle: true,
-                          title: Text(
-                            "History",
-                          ),
-                          background: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                              DecoratedBox(
-                                  decoration: BoxDecoration(
-                                      color: Colors.blueGrey))
-                            ],
-                          ),
+                          title: Text("History"),
                         ),
                       ),
                       const SliverFillRemaining(
