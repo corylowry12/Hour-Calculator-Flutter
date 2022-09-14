@@ -62,7 +62,7 @@ class _HistoryTabState extends State<HistoryTab> {
 
   refreshHistory() async {
     setState(() => isLoading = true);
-    hours = await HoursDatabase.instance.readAllNotes();
+    hours = await globals.hoursDatabase.readAllNotes();
     hourCount = hours.length;
     setState(() => isLoading = false);
     _mainScrollController.jumpTo(scrollPosition);
