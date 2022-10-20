@@ -162,7 +162,7 @@ class ThemeManagement extends StatefulWidget {
   _ThemeManagement createState() => _ThemeManagement();
 }
 
-late var groupID;
+late int groupID;
 int colorAccent = 0xFF009688;
 
 class _ThemeManagement extends State<ThemeManagement> {

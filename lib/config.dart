@@ -7,6 +7,4 @@ import 'HoursDB.dart';
 AppModel appModel = AppModel();
 BadgeModel badgeModel = BadgeModel();
 
-HoursDatabase hoursDatabase = HoursDatabase.instance;
-
 AppPreference appPreference = AppPreference();

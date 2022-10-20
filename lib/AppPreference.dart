@@ -79,9 +79,9 @@ class AppPreference extends ChangeNotifier {
     prefs.setString(DIALOG_BUTTON_THEME_SETTING, value);
   }
 
-  Future<String> getDialogButtonColor() async {
+  Future<int> getDialogButtonColor() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(DIALOG_BUTTON_THEME_SETTING) ?? "0xFF00786C";
+    return prefs.getInt(DIALOG_BUTTON_THEME_SETTING) ?? 0xFF00786C;
   }
 
   setDialogBackgroundColor(String value) async {
@@ -89,8 +89,8 @@ class AppPreference extends ChangeNotifier {
     prefs.setString(DIALOG_BACKGROUND_THEME_SETTING, value);
   }
 
-  Future<String> getDialogBackgroundColor() async {
+  Future<int> getDialogBackgroundColor() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(DIALOG_BACKGROUND_THEME_SETTING) ?? "0xFF009688";
+    return prefs.getInt(DIALOG_BACKGROUND_THEME_SETTING) ?? 0xFF009688;
   }
 }

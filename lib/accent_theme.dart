@@ -73,34 +73,34 @@ class _AccentThemeState extends State<AccentTheme> {
                 centerTitle: true,
                 backgroundColor: Color(accent),
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Stack(fit: StackFit.expand, children: [
+                  background: Stack(fit: StackFit.expand, children: const [
                     DecoratedBox(
                         decoration: BoxDecoration(color: Colors.blueGrey))
                   ]),
                   centerTitle: true,
-                  title: Text("Accent Theme"),
+                  title: const Text("Accent Theme"),
                 ),
               ),
             ];
           },
           body: Padding(
-            padding: EdgeInsets.only(left: 10, top: 10),
+            padding: const EdgeInsets.only(left: 10, top: 10),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Text("Accent Color",
                         style: TextStyle(
                             color: Color(accent), fontWeight: FontWeight.bold)),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 5),
+                    padding: const EdgeInsets.only(top: 5),
                     child: ListTile(
-                      title: Text('Teal (Default)'),
+                      title: const Text('Teal (Default)'),
                       leading:
-                          Icon(Icons.format_paint_outlined, color: Colors.teal),
+                          const Icon(Icons.format_paint_outlined, color: Colors.teal),
                       trailing: Radio(
                         focusColor: Color(accent),
                         fillColor: MaterialStateColor.resolveWith(
@@ -113,7 +113,11 @@ class _AccentThemeState extends State<AccentTheme> {
                           globals.appPreference.setAccentThemePref(0);
                           accent = 0xFF009688;
                           globals.appPreference.setAccentThemeInt(0);
-
+                          var backgroundColor = lighten(Colors.teal);
+                          var backgroundColorString = backgroundColor.toString();
+                          String backgroundValueString = backgroundColorString.split('(0x')[1].split(')')[0];
+                          int backgroundValue = int.parse(backgroundValueString, radix: 16);
+                          globals.appPreference.setDialogBackgroundColor(backgroundValue.toString());
                           /*if (Platform.isIOS) {
                             try {
                               if (await FlutterDynamicIcon
@@ -137,6 +141,11 @@ class _AccentThemeState extends State<AccentTheme> {
                         globals.appPreference.setAccentThemePref(0);
                         accent = 0xFF009688;
                         globals.appPreference.setAccentThemeInt(0);
+                        var backgroundColor = lighten(Colors.teal);
+                        var backgroundColorString = backgroundColor.toString();
+                        String backgroundValueString = backgroundColorString.split('(0x')[1].split(')')[0];
+                        int backgroundValue = int.parse(backgroundValueString, radix: 16);
+                        globals.appPreference.setDialogBackgroundColor(backgroundValue.toString());
 
                         /*if (Platform.isIOS) {
                           try {
